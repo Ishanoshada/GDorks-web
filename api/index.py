@@ -4,6 +4,7 @@ import asyncio
 import aiohttp
 import os
 from dotenv import load_dotenv
+import urllib.parse  
 
 app = Flask(__name__)
 
@@ -55,8 +56,9 @@ class GDorksSelector:
             return []
 
         random_file = random.choice(files)
+        encoded_file = urllib.parse.quote(random_file)
         async with aiohttp.ClientSession() as session:
-            file_metadata = await self.fetch_json(session, f"{self.base_url}/{category}/{random_file}")
+            file_metadata = await self.fetch_json(session, f"{self.base_url}/{category}/{encoded_file}")
             if file_metadata and "download_url" in file_metadata:
                 async with session.get(file_metadata["download_url"]) as file_response:
                     if file_response.status == 200:
