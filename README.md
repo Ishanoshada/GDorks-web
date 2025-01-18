@@ -5,6 +5,9 @@
 
 Welcome to **GDorks Web** — your gateway to discovering random Google Dorks straight from the [GDorks repository](https://github.com/Ishanoshada/GDorks)! This web application allows you to explore and retrieve Google Dorks (specific search queries) organized into categories, all powered by GitHub's repository contents.
 
+
+Give us a ⭐️ if you find this project helpful!
+
 ### 🚀 [Live Demo](https://gdork-web.vercel.app/)
 
 Check out the live version of **GDorks Web** hosted on Vercel!
@@ -98,6 +101,31 @@ Open your browser and go to `http://127.0.0.1:5000/` to access the app locally.
 1. **Choose a Category**: Type in the category you want (e.g., "CCTV").
 2. **Specify the Number of Dorks**: Enter the number of random dorks you wish to retrieve.
 3. **Explore Dorks**: View the selected category and the corresponding random dorks from the files in that category.
+
+
+## Show Your Support
+
+Give us a ⭐️ if GDorks has been your guide in the vast online landscape!
+
+## Disclaimer
+
+This list is for educational purposes only. Use Google dorks responsibly, respect privacy, intellectual property, and abide by all laws and regulations. Let's make the internet safer and more secure together!
+
+Happy dorking! 🌟
+
+
+**Repository Views** ![Views](https://profile-counter.glitch.me/GDorks/count.svg)
+
+## Star History
+
+<a href="https://star-history.com/#ishanoshada/GDorks&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ishanoshada/GDorks&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ishanoshada/GDorks&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ishanoshada/GDorks&type=Date" />
+  </picture>
+</a>
+
 
 ## 🤝 Contributing
 
