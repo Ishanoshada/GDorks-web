@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDorks Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        li:nth-child(odd) {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GDorks Selector</h1>
+    </header>
+    <main>
+        <form id="dork-form">
+            <label for="category">Select a Category:</label>
+            <select id="category" name="category" required>
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="num_dorks">Number of Dorks:</label>
+            <input type="number" id="num_dorks" name="num_dorks" value="10" min="1" required>
+
+            <button type="submit">Get Dorks</button>
+        </form>
+        
+        <h2>Random Dorks</h2>
+        <ul id="dorks-list"></ul>
+    </main>
+
+    <script>
+        document.getElementById('dork-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const category = document.getElementById('category').value;
+            const numDorks = document.getElementById('num_dorks').value;
+            const response = await fetch('/get-dorks', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ category, num_dorks: numDorks })
+            });
+
+            const dorksList = document.getElementById('dorks-list');
+            dorksList.innerHTML = '';
+
+            if (response.ok) {
+                const result = await response.json();
+                result.dorks.forEach(dork => {
+                    const li = document.createElement('li');
+                    li.textContent = dork;
+                    dorksList.appendChild(li);
+                });
+            } else {
+                const error = await response.json();
+                const li = document.createElement('li');
+                li.textContent = error.error || 'An error occurred while fetching dorks.';
+                li.style.color = 'red';
+                dorksList.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>
