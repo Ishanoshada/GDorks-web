@@ -16,7 +16,7 @@ class GDorksSelector:
         self.headers = {
             "Accept": "application/vnd.github.v3+json",
             "User-Agent": "GDorks-Selector",
-            "Authorization": f"token {os.getenv('GITHUB_PAT')}"
+            "Authorization": f"token {os.getenv('GIT_PAT')}"
         }
 
     async def fetch_json(self, session, url):
