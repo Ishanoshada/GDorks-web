@@ -8,6 +8,18 @@ Welcome to **GDorks Web** — your gateway to discovering random Google Dorks st
 
 Give us a ⭐️ if you find this project helpful!
 
+<p align="center">
+  <a href="https://www.paypal.com/donate/?business=ic31908%40gmail.com&currency_code=USD">
+    <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal" height="80">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.paypal.com/donate/?business=ic31908%40gmail.com&currency_code=USD">
+    <img src="https://raw.githubusercontent.com/elestyle/elepay-payment-logos/master/payment_logos/svg/paypal.svg" alt="Donate with PayPal" height="100">
+  </a>
+</p>
+
 ### 🚀 [Live Demo](https://gdork-web.vercel.app/)
 
 Check out the live version of **GDorks Web** hosted on Vercel!
